@@ -8,11 +8,10 @@ namespace EscapeRoom
 {
     internal class Door
     {
-        private string _description;
-        public string Description { get; set; }
+        public string Description { get; private set; }
         public Door(string description)
         {
-            _description = description;
+            Description = description;
         }
     }
 }

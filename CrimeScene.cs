@@ -21,13 +21,13 @@ namespace EscapeRoom
         // * Might change according to the different scene
         public void DisplayEvidences()
         {
-            GrayText("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            DisplayText("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             foreach (var item in _items)
             {
                 item.DisplayItem();
             }
-            GrayText("\n"+_door);
-            GrayText("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            DisplayText("\n"+_door);
+            DisplayText("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
     }
 }

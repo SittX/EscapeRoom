@@ -25,15 +25,15 @@ namespace EscapeRoom
 
         public void DisplayItem()
         {
-            GrayText("\n"+Name);
+            DisplayText("\n"+Name);
         }
 
         public void DisplayItemDescription()
         {
             Console.Clear();
             Console.WriteLine("\n");
-            GrayText(">>>Item description ");
-            RedText("\n"+Description);
+            DisplayText(">>>Item description ");
+            DisplayText("\n"+Description,ConsoleColor.Red);
         }
     }
 }

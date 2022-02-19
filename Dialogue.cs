@@ -13,56 +13,56 @@ namespace EscapeRoom
        
         private static void BreakDialogue(string breakingMessage)
         {
-            GrayText($"\n{breakingMessage}\n",false);
+            DisplayText($"\n{breakingMessage}\n",ConsoleColor.Gray,false);
             ReadKey();
         }
         public static void IntroMessage()
         {
-            RedText(GameTitle,false);
-           GrayText("\tWelcome from 'Devils Between' game, stranger");
+            DisplayText(GameTitle, ConsoleColor.DarkRed, false);
+           DisplayText("\tWelcome from 'Devils Between' game, stranger");
         }
 
         public static void StoryBeginning(Player currentPlayer)
         {
-            string player = currentPlayer.Playername;
-            string nameSuffix;
+            string playername = currentPlayer.Playername;
+            string namePrefix;
             if (currentPlayer.Gender == "M")
             {
-                nameSuffix = "Mr";
+                namePrefix = "Mr";
             }
             else
             {
-                nameSuffix = "Ms";
+                namePrefix = "Ms";
             }
             BreakDialogue("\nPress any key to start");
-            GrayText("\n================================================================================");
+            DisplayText("\n================================================================================");
             Clear();
-            RedText(House);
-            RedText("\nOn a heavily raining night, someone is knocking your front door.");
+            DisplayText(House,ConsoleColor.DarkRed);
+            DisplayText("\nOn a heavily raining night, someone is knocking your front door.");
             BreakDialogue("Press any key to open the door");
             Clear();
-            RedText(Officer);
-            BlueText($"\nThe police Officer :  Are you {nameSuffix} {player} ?");
+            DisplayText(Officer,ConsoleColor.Blue);
+            DisplayText($"\nThe police Officer :  Are you {namePrefix} {playername} ?",ConsoleColor.Blue);
             BreakDialogue("Press any key to answer the question");
-            GreenText($"\n{player} : Yes, I'm {player}.");
-            BlueText("\nThe police Officer : Sir there is a murder case at Downin street and the chief said that he wants you to come and see the case.");
-            GreenText($"\n{player} : Alright,I'll be there in a minute. Let's me take my coat first.");
+            DisplayText($"\n{playername} : Yes, I'm {playername}.",ConsoleColor.Green);
+            DisplayText("\nThe police Officer : Sir there is a murder case at Downin street and the chief said that he wants you to come and see the case.",ConsoleColor.Blue);
+            DisplayText($"\n{playername} : Alright,I'll be there in a minute. Let's me take my coat first.",ConsoleColor.Green);
             BreakDialogue("Press any key to continue");
-            GrayText("\n================================================================================");
+            DisplayText("\n================================================================================");
             Clear();
         }
 
         public static void Scene1Dialogue()
         {
-            RedText(CrimeScene1);
-            GrayText("\nWhen you reached to the crime scene, you found many polices searching the evidences all over the place.");
-            GrayText("\nThe victim, a young man in his 20s, is hanged on a bar between the two buildings.");
-            GrayText("\nOne policeman approached to you and said ");
-            BlueText("The Policeman : Looks like another suicide case but it's strange how he did climb up between those buildings.");
+            DisplayText(CrimeScene1,ConsoleColor.DarkRed);
+            DisplayText("\nWhen you reached to the crime scene, you found many polices searching the evidences all over the place.");
+            DisplayText("\nThe victim, a young man in his 20s, is hanged on a bar between the two buildings.");
+            DisplayText("\nOne policeman approached to you and said ");
+            DisplayText("The Policeman : Looks like another suicide case but it's strange how he did climb up between those buildings.",ConsoleColor.Blue);
             BreakDialogue("\nPress any key to ask for evidences");
             Clear();
-            GreenText("\nYou : Is there any evidences related to the victim ?");
-            BlueText("\nThe policeman : These isn't alot yet but we have found these ");
+            DisplayText("\nYou : Is there any evidences related to the victim ?",ConsoleColor.Green);
+            DisplayText("\nThe policeman : These isn't alot yet but we have found these ",ConsoleColor.Blue);
         }
 
         public static void Scene2Dialogue()

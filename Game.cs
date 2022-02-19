@@ -52,10 +52,10 @@ namespace EscapeRoom
             {
                 while (true)
                 {
-                GrayText("\n======================================================");
-                GrayText("\nName : ", false);
+                DisplayText("\n======================================================");
+                DisplayText("\nName : ",ConsoleColor.Gray, false);
                 username = ReadLine();
-                GrayText("\nGender [ M/F ] : ", false);
+                DisplayText("\nGender [ M/F ] : ",ConsoleColor.Gray, false);
                 gender = ReadLine().ToUpper();
 
                     if(gender == "M" || gender == "F")
@@ -64,14 +64,14 @@ namespace EscapeRoom
                         break;
                     }else
                     {
-                        RedText("\nPlease choose your gender.");
+                        DisplayText("\nPlease choose your gender.",ConsoleColor.Red);
                     }
-                GrayText("\n======================================================");
+                DisplayText("\n======================================================");
                 }
             }
             catch (Exception ex)
             {
-                RedText(ex.Message);
+                DisplayText(ex.Message,ConsoleColor.Red);
                 throw;
             }
 
@@ -81,8 +81,8 @@ namespace EscapeRoom
         {
             Console.Clear();
             Console.WriteLine("\n");
-            GrayText(">>>Item description ");
-            RedText("\n" + item.Description);
+            DisplayText(">>>Item description ");
+            DisplayText("\n" + item.Description,ConsoleColor.Red);
         }
 
         private void FirstScene()
@@ -93,7 +93,7 @@ namespace EscapeRoom
             while (!exitLoop)
             {
             _Scene1.DisplayEvidences();
-            GrayText("\nChoose an item to closely investigate ",false);
+            DisplayText("\nChoose an item to closely investigate ",ConsoleColor.Gray,false);
             string item = ReadLine().ToLower();
             switch (item)
             {
@@ -111,11 +111,11 @@ namespace EscapeRoom
                     break;
             }
             }
+            Console.WriteLine("To be continue...");
         }
 
         private void SecondScene()
         {
-            Console.WriteLine("To be continue...");
         }
     }
 }
